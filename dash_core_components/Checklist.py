@@ -21,14 +21,18 @@ Keyword arguments:
 - labelStyle (dict; optional): The style of the <label> that wraps the checkbox input
  and the option's label
 - labelClassName (string; optional): The class of the <label> that wraps the checkbox input
- and the option's label"""
+ and the option's label
+- spanCheckmarkStyle (dict; optional): The Style of the checkmark
+- spanCheckmarkClassName (string; optional): The class of the checkmark
+- spanLabelStyle (dict; optional): The style of the <span> that has the label
+- spanLabelClassName (string; optional): The class of the <span> that has the label"""
     @_explicitize_args
-    def __init__(self, id=Component.UNDEFINED, options=Component.UNDEFINED, values=Component.UNDEFINED, className=Component.UNDEFINED, style=Component.UNDEFINED, inputStyle=Component.UNDEFINED, inputClassName=Component.UNDEFINED, labelStyle=Component.UNDEFINED, labelClassName=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['id', 'options', 'values', 'className', 'style', 'inputStyle', 'inputClassName', 'labelStyle', 'labelClassName']
+    def __init__(self, id=Component.UNDEFINED, options=Component.UNDEFINED, values=Component.UNDEFINED, className=Component.UNDEFINED, style=Component.UNDEFINED, inputStyle=Component.UNDEFINED, inputClassName=Component.UNDEFINED, labelStyle=Component.UNDEFINED, labelClassName=Component.UNDEFINED, spanCheckmarkStyle=Component.UNDEFINED, spanCheckmarkClassName=Component.UNDEFINED, spanLabelStyle=Component.UNDEFINED, spanLabelClassName=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['id', 'options', 'values', 'className', 'style', 'inputStyle', 'inputClassName', 'labelStyle', 'labelClassName', 'spanCheckmarkStyle', 'spanCheckmarkClassName', 'spanLabelStyle', 'spanLabelClassName']
         self._type = 'Checklist'
         self._namespace = 'dash_core_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['id', 'options', 'values', 'className', 'style', 'inputStyle', 'inputClassName', 'labelStyle', 'labelClassName']
+        self.available_properties = ['id', 'options', 'values', 'className', 'style', 'inputStyle', 'inputClassName', 'labelStyle', 'labelClassName', 'spanCheckmarkStyle', 'spanCheckmarkClassName', 'spanLabelStyle', 'spanLabelClassName']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

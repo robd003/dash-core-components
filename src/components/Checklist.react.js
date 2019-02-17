@@ -27,6 +27,10 @@ export default class Checklist extends Component {
             labelClassName,
             labelStyle,
             options,
+            spanCheckmarkClassName,
+            spanCheckmarkStyle,
+            spanLabelClassName,
+            spanLabelStyle,
             setProps,
             style,
         } = this.props;
@@ -40,6 +44,13 @@ export default class Checklist extends Component {
                         style={labelStyle}
                         className={labelClassName}
                     >
+                        <span
+                            key={option.value + '1'}
+                            style={spanLabelStyle}
+                            className={spanLabelClassName}
+                        >
+                            {option.label}
+                        </span>
                         <input
                             checked={contains(option.value, values)}
                             className={inputClassName}
@@ -59,7 +70,11 @@ export default class Checklist extends Component {
                                 }
                             }}
                         />
-                        {option.label}
+                        <span
+                            key={option.value + '2'}
+                            style={spanCheckmarkStyle}
+                            className={spanCheckmarkClassName}>
+                        </span>
                     </label>
                 ))}
             </div>
@@ -132,6 +147,26 @@ Checklist.propTypes = {
     labelClassName: PropTypes.string,
 
     /**
+     * The Style of the checkmark
+     */
+    spanCheckmarkStyle: PropTypes.object,
+
+    /**
+     * The class of the checkmark
+     */
+    spanCheckmarkClassName: PropTypes.string,
+
+    /**
+     * The style of the <span> that has the label
+     */
+    spanLabelStyle: PropTypes.object,
+
+    /**
+     * The class of the <span> that has the label
+     */
+    spanLabelClassName: PropTypes.string,
+
+    /**
      * Dash-assigned callback that gets fired when the value changes.
      */
     setProps: PropTypes.func,
@@ -142,5 +177,9 @@ Checklist.defaultProps = {
     inputClassName: '',
     labelStyle: {},
     labelClassName: '',
+    spanCheckmarkStyle: {},
+    spanCheckmarkClassName: '',
+    spanLabelStyle: {},
+    spanLabelClassName: '',
     options: [],
 };
